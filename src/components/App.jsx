@@ -47,12 +47,16 @@ export class App extends Component {
       <div>
         <h1 style={{ textAlign: 'center' }}>Phonebook</h1>
         <Phonebook onSubmit={this.onFormSubmit} />
-        <Filter value={filter} onChange={this.onFilterUpdate} />
-        <h2 style={{ textAlign: 'center' }}>Contacts</h2>
-        <ContactsList
-          contactsList={visibleContacts}
-          onDelete={this.onDeleteContact}
-        />
+        {this.state.contacts.length !== 0 && (
+          <div>
+            <h2 style={{ textAlign: 'center' }}>Contacts</h2>
+            <Filter value={filter} onChange={this.onFilterUpdate} />
+            <ContactsList
+              contactsList={visibleContacts}
+              onDelete={this.onDeleteContact}
+            />
+          </div>
+        )}
       </div>
     );
   }
