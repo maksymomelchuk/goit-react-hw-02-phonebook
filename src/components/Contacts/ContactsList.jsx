@@ -5,7 +5,17 @@ import { StyledContactsList } from './Contacts.styled';
 export default function ContactsList({ contactsList, onDelete }) {
   return (
     <StyledContactsList>
-      <ContactsListElement data={contactsList} onDelete={onDelete} />
+      {contactsList.map(({ id, name, number }) => {
+        return (
+          <ContactsListElement
+            key={id}
+            id={id}
+            name={name}
+            number={number}
+            onDelete={onDelete}
+          />
+        );
+      })}
     </StyledContactsList>
   );
 }

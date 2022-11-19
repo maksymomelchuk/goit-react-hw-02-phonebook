@@ -4,9 +4,9 @@ import {
   StyledLabel,
   StyledInput,
   StyledButton,
-} from './Phonebook.styled';
+} from './ContactForm.styled';
 
-class Phonebook extends Component {
+class ContactForm extends Component {
   state = {
     name: '',
     number: '',
@@ -64,4 +64,4 @@ class Phonebook extends Component {
   }
 }
 
-export { Phonebook };
+export { ContactForm };

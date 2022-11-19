@@ -2,7 +2,7 @@ import { nanoid } from 'nanoid';
 import { Component } from 'react';
 import ContactsList from './Contacts/ContactsList';
 import Filter from './Filter/Filter';
-import { Phonebook } from './Phonebook/Phonebook';
+import { ContactForm } from './Phonebook/ContactForm';
 
 export class App extends Component {
   state = {
@@ -46,7 +46,7 @@ export class App extends Component {
     return (
       <div>
         <h1 style={{ textAlign: 'center' }}>Phonebook</h1>
-        <Phonebook onSubmit={this.onFormSubmit} />
+        <ContactForm onSubmit={this.onFormSubmit} />
         {this.state.contacts.length !== 0 && (
           <div>
             <h2 style={{ textAlign: 'center' }}>Contacts</h2>
